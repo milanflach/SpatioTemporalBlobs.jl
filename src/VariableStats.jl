@@ -73,6 +73,8 @@ function getPosNegCentroids(CCobj::CCstats, VarStats::VariableStats, QuantileSco
   return Centroids = (VarStats.High_LONcenters, VarStats.High_LATcenters, VarStats.High_TIMEcenters, VarStats.Low_LONcenters, VarStats.Low_LATcenters, VarStats.Low_TIMEcenters)
 end
 
+export getPosNegCentroids
+
 function spatDist(lon1, lon2, lat1, lat2)
     meanlat = (lat1 .+ lat2) / 2
     spatD = sqrt.((lon1 .- lon2) .* (lon1 .- lon2) + (cosd.(meanlat) .* (lat1 .- lat2)) .* (cosd.(meanlat) .* (lat1 .- lat2))) .* 111.324
