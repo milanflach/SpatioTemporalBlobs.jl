@@ -97,7 +97,7 @@ function NetCDF2CCobj!(CCobj, inputname; endskip::Int = 3, startskip::Int = 0 )
     varname = string(propertynames(CCobj)[i])
     print("\n read $(varname) ...")
     x = ncread(inputname, varname)
-    if length(x) == 1
+    if length(x) == 1 || varname == "Latitudes" || varname = "Longitudes"
         x = broadcast(eltype(getfield(CCobj, propertynames(CCobj)[i])), x)
     else
         x = convert(typeof(getfield(CCobj, propertynames(CCobj)[i])), x)
