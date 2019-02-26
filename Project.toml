@@ -8,6 +8,7 @@ Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 Images = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
 JLD = "4138dd39-2aa7-5051-a626-17a0bb65d9c8"
 NetCDF = "30363a11-5582-574a-97bb-aa9a979735b9"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 
 [compat]
 julia = "1.1"

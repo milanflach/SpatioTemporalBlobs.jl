@@ -1,5 +1,7 @@
 module SpatioTemporalBlobs
 
+import StatsBase.median
+
 mutable struct VariableStats
   Histogram::Array{Float64,2}
   ContrastingResponse::Array{Int, 1}
