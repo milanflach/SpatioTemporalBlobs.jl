@@ -98,7 +98,7 @@ function NetCDF2CCobj!(CCobj, inputname; endskip::Int = 3, startskip::Int = 0 )
     print("\n read $(varname) ...")
     x = ncread(inputname, varname)
     if length(x) == 1
-        x = convert(eltype(getfield(CCobj, propertynames(CCobj)[i])), x)
+        x = broadcast(eltype(getfield(CCobj, propertynames(CCobj)[i])), x)
     else
         x = convert(typeof(getfield(CCobj, propertynames(CCobj)[i])), x)
     end
