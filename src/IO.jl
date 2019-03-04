@@ -105,9 +105,9 @@ function NetCDF2CCobj!(CCobj, inputname; endskip::Int = 3, startskip::Int = 0 )
     if length(x) == 1
       setfield!(CCobj, propertynames(CCobj)[i], x[1])
     elseif varname == "Latitudes"
-      setfield!(CCobj, propertynames(CCobj)[i], maximum(x):round(x[2]-x[1], digits=2):minimum(x))
+      setfield!(CCobj, propertynames(CCobj)[i], maximum(x):round(x[2]-x[1], digits=5):minimum(x))
     elseif varname == "Longitudes"
-      setfield!(CCobj, propertynames(CCobj)[i], minimum(x):round(x[2]-x[1], digits=2):maximum(x))
+      setfield!(CCobj, propertynames(CCobj)[i], minimum(x):round(x[2]-x[1], digits=5):maximum(x))
     else
       setfield!(CCobj, propertynames(CCobj)[i], x)
     end
